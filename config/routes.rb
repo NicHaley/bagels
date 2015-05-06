@@ -1,5 +1,43 @@
 Rails.application.routes.draw do
 
+  get 'customer/create'
+
+  get 'customer/destroy'
+
+  get 'cart/new'
+
+  get 'cart/show'
+
+  get 'cart/create'
+
+  get 'cart/destroy'
+
+  get 'addresses/create'
+
+  get 'addresses/update'
+
+  get 'addresses/destroy'
+
+  get 'orders/new'
+
+  get 'orders/create'
+
+  get 'orders/destroy'
+
+  get 'bagels/new'
+
+  get 'bagels/create'
+
+  get 'bagels/destroy'
+
+  get 'bagels/update'
+
+  get 'toppings/create'
+
+  get 'toppings/destroy'
+
+  get 'toppings/update'
+
   resources :charges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
