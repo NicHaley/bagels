@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506155534) do
+ActiveRecord::Schema.define(version: 20150509184650) do
 
   create_table "addresses", force: true do |t|
     t.string   "name"
@@ -19,14 +19,6 @@ ActiveRecord::Schema.define(version: 20150506155534) do
     t.string   "city"
     t.string   "postal"
     t.string   "country"
-    t.integer  "order_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bagels", force: true do |t|
-    t.string   "type"
-    t.boolean  "open"
     t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -50,13 +42,11 @@ ActiveRecord::Schema.define(version: 20150506155534) do
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "toppings", force: true do |t|
-    t.string   "type"
-    t.integer  "bagel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "variety"
+    t.boolean  "open"
+    t.string   "topping1"
+    t.string   "topping2"
+    t.string   "topping3"
   end
 
 end
