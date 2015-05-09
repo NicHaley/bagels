@@ -1,18 +1,21 @@
 class AddressesController < ApplicationController
-  def new
-  end
+	before_filter :load_order
 
-  def create
-  end
+	def new
+		@address = Address.new
+	end
 
-  def update
-  end
+	def create
+	end
 
-  def destroy
-  end
+	def update
+	end
 
-  private
-  def load_order
-  	@order = Order.find(params[:order_id])
-  end
+	def destroy
+	end
+
+	private
+	def load_order
+		@order = Order.find(params[:order_id])
+	end
 end
