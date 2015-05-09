@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
 	def create
 		@order = Order.new(order_params)
+		@order.price = 60.00
 
 		if @order.save
 			puts "yolo"

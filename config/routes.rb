@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'orders#new'
 
   resources :charges
-  resources :orders, only: [:new, :create, :destroy, :update]
+  resources :orders, only: [:new, :create, :destroy, :update] do
+    resources :addresses, only: [:new, :create, :update, :destroy]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

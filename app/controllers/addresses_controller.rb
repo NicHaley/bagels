@@ -10,4 +10,9 @@ class AddressesController < ApplicationController
 
   def destroy
   end
+
+  private
+  def load_order
+  	@order = Order.find(params[:order_id])
+  end
 end
