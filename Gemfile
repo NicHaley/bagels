@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :development, :test do
 	gem 'pry-rails'
 	gem 'spring'
+	gem 'better_errors'
+	gem 'awesome_print'
 end
 
 # Use ActiveModel has_secure_password

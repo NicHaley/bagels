@@ -6,6 +6,13 @@ class AddressesController < ApplicationController
 	end
 
 	def create
+		@address = @order.build_address(address_params)
+
+		if @address.save
+			redirect_to root_path
+		else
+			render 'new'
+		end
 	end
 
 	def update
@@ -15,6 +22,11 @@ class AddressesController < ApplicationController
 	end
 
 	private
+
+	def address_params
+		params.require(:address).permit(:name,:address,:city,:province,:postal,:country)
+	end
+
 	def load_order
 		@order = Order.find(params[:order_id])
 	end
