@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+	def index
+		@orders = Order.all
+	end
+
 	def new
 		@order = Order.new
 	end
@@ -8,7 +12,7 @@ class OrdersController < ApplicationController
 		@order.price = 60.00
 
 		if @order.save
-			puts "yolo"
+			redirect_to new_order_address_path(order_id: @order)
 		else
 			render 'order/new'
 		end

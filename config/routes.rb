@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'orders#new'
 
   resources :charges
-  resources :orders, only: [:new, :create, :destroy, :update] do
+  resources :orders, only: [:index, :new, :create, :destroy, :update] do
     resources :addresses, only: [:new, :create, :update, :destroy]
   end
 
